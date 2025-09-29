@@ -8,15 +8,25 @@ import Footer from './components/Footer';
 import './styles/App.css';
 
 class App extends react.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuOpen: false
-    };
-    this.homeRef = react.createRef();
-    this.aboutRef = react.createRef();
-    this.servicesRef = react.createRef();
-    this.contactRef = react.createRef();
+constructor(props) {
+  super(props);
+  this.state = {
+    isMenuOpen: false
+  };
+  
+  // Create refs for each section
+  this.homeRef = react.createRef();
+  this.aboutRef =react.createRef();
+  this.servicesRef = react.createRef();
+  this.contactRef = react.createRef(); // Fixed this line
+}
+
+  componentDidMount() {
+    // Re-create refs if they're null
+    if (!this.homeRef) this.homeRef = react.createRef();
+    if (!this.aboutRef) this.aboutRef = react.createRef();
+    if (!this.servicesRef) this.servicesRef = react.createRef();
+    if (!this.contactRef) this.contactRef = react.createRef();
   }
 
   toggleMenu = () => {
@@ -26,10 +36,12 @@ class App extends react.Component {
   }
 
   scrollToSection = (ref) => {
-    ref.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
     this.setState({ isMenuOpen: false });
   }
 
@@ -46,21 +58,25 @@ class App extends react.Component {
           toggleMenu={this.toggleMenu}
         />
         
-        <div ref={this.homeRef}>
+        {/* Home Section */}
+        <section id="home" ref={this.homeRef}>
           <Home />
-        </div>
+        </section>
         
-        <div ref={this.aboutRef}>
+        {/* About Section */}
+        <section id="about" ref={this.aboutRef}>
           <About />
-        </div>
+        </section>
         
-        <div ref={this.servicesRef}>
+        {/* Services Section */}
+        <section id="services" ref={this.servicesRef}>
           <Services />
-        </div>
+        </section>
         
-        <div ref={this.contactRef}>
+        {/* Contact Section */}
+        <section id="contact" ref={this.contactRef}>
           <Contact />
-        </div>
+        </section>
         
         <Footer 
           scrollToSection={this.scrollToSection}

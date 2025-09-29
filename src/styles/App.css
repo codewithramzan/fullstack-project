@@ -34,6 +34,7 @@ html {
   content: '';
   position: absolute;
   top: 0;
+  color: white;
   left: 0;
   right: 0;
   bottom: 0;
@@ -88,4 +89,19 @@ html {
   .section-title {
     font-size: 2rem;
   }
+}
+/* Add padding to sections to account for fixed header */
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+}
+
+/* Ensure proper section spacing */
+#home, #about, #services, #contact {
+  position: relative;
 }

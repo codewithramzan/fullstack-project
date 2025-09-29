@@ -1,7 +1,7 @@
-import React from 'react';
+import react from 'react';
 import '../styles/Header.css';
 
-class Header extends React.Component {
+class Header extends react.Component {
   render() {
     const { 
       scrollToSection, 
@@ -22,10 +22,10 @@ class Header extends React.Component {
           </div>
           
           <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
-            <li><a href="#home" onClick={() => scrollToSection(homeRef)}>Home</a></li>
-            <li><a href="#about" onClick={() => scrollToSection(aboutRef)}>About</a></li>
-            <li><a href="#services" onClick={() => scrollToSection(servicesRef)}>Services</a></li>
-            <li><a href="#contact" onClick={() => scrollToSection(contactRef)}>Contact</a></li>
+            <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection(homeRef); }}>Home</a></li>
+            <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection(aboutRef); }}>About</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Services</a></li>
+            <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection(contactRef); }}>Contact</a></li>
           </ul>
           
           <div className={`burger ${isMenuOpen ? 'toggle' : ''}`} onClick={toggleMenu}>

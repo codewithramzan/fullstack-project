@@ -13,6 +13,7 @@
 .home-title {
   font-size: 4rem;
   margin-bottom: 1rem;
+  color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -20,6 +21,7 @@
   font-size: 1.5rem;
   margin-bottom: 3rem;
   opacity: 0.9;
+  color: white;
 }
 
 .hover-sections {
@@ -48,6 +50,7 @@
 
 .hover-section h3 {
   font-size: 2rem;
+  color: white;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
@@ -87,6 +90,7 @@
 
   .home-subtitle {
     font-size: 1.2rem;
+    color: white;
   }
 
   .hover-sections {

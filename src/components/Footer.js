@@ -25,30 +25,30 @@ class Footer extends react.Component {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#home" onClick={() => scrollToSection(homeRef)}>Home</a></li>
-              <li><a href="#about" onClick={() => scrollToSection(aboutRef)}>About</a></li>
-              <li><a href="#services" onClick={() => scrollToSection(servicesRef)}>Services</a></li>
-              <li><a href="#contact" onClick={() => scrollToSection(contactRef)}>Contact</a></li>
+              <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection(homeRef); }}>Home</a></li>
+              <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection(aboutRef); }}>About</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Services</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection(contactRef); }}>Contact</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Services</h4>
             <ul className="footer-links">
-              <li><a href="#services">Web Development</a></li>
-              <li><a href="#services">Mobile Development</a></li>
-              <li><a href="#services">Cloud Solutions</a></li>
-              <li><a href="#services">Maintenance</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Web Development</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Mobile Development</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Cloud Solutions</a></li>
+              <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection(servicesRef); }}>Maintenance</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Connect With Us</h4>
             <div className="social-links">
-              <a href="#" className="social-link">📘</a>
-              <a href="#" className="social-link">🐦</a>
-              <a href="#" className="social-link">📷</a>
-              <a href="#" className="social-link">💼</a>
+              <a href="#" className="social-link" onClick={(e) => e.preventDefault()}>📘</a>
+              <a href="#" className="social-link" onClick={(e) => e.preventDefault()}>🐦</a>
+              <a href="#" className="social-link" onClick={(e) => e.preventDefault()}>📷</a>
+              <a href="#" className="social-link" onClick={(e) => e.preventDefault()}>💼</a>
             </div>
           </div>
         </div>
