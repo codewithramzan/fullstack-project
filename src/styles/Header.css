@@ -150,9 +150,9 @@
 }
 
 /* Add some padding to body to account for fixed header */
-body {
+/* body {
   padding-top: 80px;
-}
+} */
 
 @media (max-width: 768px) {
   body {
